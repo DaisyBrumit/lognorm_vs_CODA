@@ -1,4 +1,10 @@
 #!/bin/bash
+#SBATCH --partition=Orion
+#SBATCH --time=3:00:00
+#SBATCH --nodes=1
+#SBATCH --mem=12GB
+#SBATCH --job-name=NRunSra
+
 echo "hi"
 mkdir logs; download.sh &> logs/download.log
 
@@ -6,7 +12,7 @@ echo "in $(pwd) directory"
 
 module load sra-tools  
 
-META=../../SraAccList.txt
+META=../../SraRunTable.txt
 COL=1
 
 NUM=$( < $META wc -l)
