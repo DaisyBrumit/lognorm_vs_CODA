@@ -43,8 +43,12 @@ tree <- read.tree(file.path(output_dir, "silva",opt$tree_fname))
 for (i in 1:seq_along()(tree$tip.label)){
   lab <- tree$tip.label[i]
   id <- strsplit(lab, "_")[[1]][1]
-  myGen <- ape:::read.GenBank(id, as.character=T, species.names = FALSE)
-  myDna <- lapply(myGen, function(x) paste0(x, collapse = ''))
-  cat(paste0(">", id, "\n", paste0(myDna), "\n"), file = fastaFile, append=TRUE)
+  if (substr(id, 1, 1) == '\'') {id <- gsub('^.', '', id)}
+  tryCatch(
+    {myGen <- ape:::read.GenBank(id, as.character=T, species.names = FALSE)
+    myDna <- lapply(myGen, function(x) paste0(x, collapse = ''))
+    cat(paste0(">", id, "\n", paste0(myDna), "\n"), file = fastaFile, append=TRUE)},
+    error = function(cond) {message("Encountered a specific error:", cond)}
+  )
   Sys.sleep(.45)
 }
