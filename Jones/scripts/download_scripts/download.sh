@@ -1,4 +1,10 @@
 #!/bin/bash
+#SBATCH --partition=Orion
+#SBATCH --time=3:00:00
+#SBATCH --nodes=1
+#SBATCH --mem=12GB
+#SBATCH --job-name=JRunSra
+
 echo "hi"
 mkdir logs; download.sh &> logs/download.log
 
