@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --partition=Orion
-#SBATCH --time=3:00:00
+#SBATCH --time=12:00:00
 #SBATCH --nodes=1
 #SBATCH --mem=12GB
 #SBATCH --job-name=NRunSra
@@ -12,7 +12,7 @@ echo "in $(pwd) directory"
 
 module load sra-tools  
 
-META=../../SraRunTable.txt
+META=../../SraAccList.txt
 COL=1
 
 NUM=$( < $META wc -l)
