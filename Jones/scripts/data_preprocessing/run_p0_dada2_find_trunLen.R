@@ -14,8 +14,8 @@ r_script <- file.path(home_dir, "lib", "cml_scripts", "data_preprocessing","p0_d
 my_args <- paste(
   "-d", home_dir,
   "-p", project,
-  "-f", "_1.fastq.gz",
-  "-r", "_2.fastq.gz"
+  "-f", "_1.fastq",
+  "-r", "_2.fastq"
 )
 
 sys_command <- paste(r_script, my_args)
