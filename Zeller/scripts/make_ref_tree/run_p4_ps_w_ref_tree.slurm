@@ -23,7 +23,7 @@ module load R
 Rscript ~/git/lognorm_vs_CODA/lib/cml_scripts/make_ref_tree/p4_ps_w_ref_tree.R -d ~/git/lognorm_vs_CODA \
   -p Zeller \
   -m ~/git/lognorm_vs_CODA/Zeller/SraRunTable.txt \
-  -l , \
+  -l '\t' \
   -r Run
 
 echo ""
