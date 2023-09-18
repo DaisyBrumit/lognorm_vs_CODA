@@ -23,8 +23,8 @@ module load R
 Rscript ~/git/lognorm_vs_CODA/lib/cml_scripts/transformations/p2_denovo_tree_UPGMA.R \
 --homedir ~/git/lognorm_vs_CODA \
 --project Zeller \
---metadat ~/git/lognorm_vs_CODA/Zeller/SraRunTable.txt \
---metadata_delim , \
+--metadata ~/git/lognorm_vs_CODA/Zeller/SraRunTable.txt \
+--metadata_delim ; \
 --metadata_rowname Run
 
 # Options:

@@ -49,7 +49,7 @@ output_dir <- file.path(home_dir, project, 'output')
 asv_table <- readRDS(file.path(output_dir, "r_objects", opt$input_table))
 print("Finished establishing directory layout")
 
-my_set <- DNAStringSet(colnames(asv_table))
+my_set <- DNAStringSet(colnames(t(asv_table)))
 alignment <- DECIPHER::AlignSeqs(my_set, anchor=NA,verbose=FALSE)
 names(alignment) <- my_set
 writeXStringSet(alignment, file = file.path(output_dir, "tables", paste0(opt$output_file, ".fasta")), 
