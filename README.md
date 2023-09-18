@@ -2,11 +2,12 @@
 
 This repository holds the code for the manuscript "Log-normalizing to read depth outperforms compositional data transformations in machine learning applications", in which in which we compared and contrasted different data transformations across different datasets. It was designed to be extensible and ensure that each transformation was treated fairly. The proposed order in which to run these scripts is
 
-1) Access lib/cml_scripts/creat_ref_tree_blst_db](https://github.com/amyerke/lognorm_vs_CODA/tree/main/lib/cml_scripts/creat_ref_tree_blst_db) and create the overarching reference database from Silva input
+1) Access "/lib/cml_scripts/creat_ref_tree_blst_db" and create the overarching reference database from Silva input
 2) Access "<project>/scripts/download_scripts" for each project and download project specific information
-3) Access "<project>/scripts/data_preprocessing" for each project to run dada2 and create a second, filtered dataset if you so choose
+3) Access "<project>/scripts/data_preprocessing" for each project to run dada2
 4) Access "<project>/scripts/make_ref_tree" to create a reference tree specific to each project
-5) Access "<project>/scripts/transformations"
+5) Access "<project>/scripts/transformations" to create philr transforms, trees, and naive transforms. Note that filtered datasets are created in the non-ilr transformation script and some upstream processes may need to be run again after this step if you wish to include/reproduce prevalence filtered data.
+
 
 Within each project's script directories, steps should be clearly labeled "p#" in numeric order of operations. 
 
